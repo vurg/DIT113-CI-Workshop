@@ -1,12 +1,25 @@
 # DIT113-CI-Workshop
 
 
-
 ## Getting started
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.
 
 Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+
+shared runner installation:
+```
+docker run -d --name gitlab-runner --restart always \
+  -v /srv/gitlab-runner/config:/etc/gitlab-runner \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /dev/ttyACM0:/dev/ttyACM0 \
+  gitlab/gitlab-runner:latest
+
+```
+
+
+
+
 
 ## Add your files
 
