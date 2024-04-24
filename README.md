@@ -7,14 +7,42 @@ To make it easy for you to get started with GitLab, here's a list of recommended
 
 Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
 
+```
+curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
+```
+add to PATH
+```
+echo 'export PATH=$PATH:/home/nas/bin' >> ~/.bashrc
+```
+check boards:
+```
+arduino-cli board list
+```
+prints:
+```
+nas@WorkhorseOG:~$ arduino-cli board list
+Port         Protocol Type              Board Name FQBN Core
+/dev/ttyACM0 serial   Serial Port (USB) Unknown
+```
+
 shared runner installation:
 ```
-docker run -d --name gitlab-runner --restart always \
+sudo docker run -d --name gitlab-runner --restart always \
   -v /srv/gitlab-runner/config:/etc/gitlab-runner \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v /dev/ttyACM0:/dev/ttyACM0 \
   gitlab/gitlab-runner:latest
 
+
+sudo docker run -d --name gitlab-runner --restart always \
+  -v /srv/gitlab-runner/config:/etc/gitlab-runner \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /dev/ttyACM0:/dev/ttyACM0 \
+  gitlab/gitlab-runner:latest
+
+sudo docker run --rm -it -v /srv/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner register
+
+sudo docker run --rm -it -v /srv/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner run
 ```
 
 
