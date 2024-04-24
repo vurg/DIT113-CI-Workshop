@@ -1,7 +1,9 @@
 #include "RTC_SAMD51.h"
 #include "DateTime.h"
+#include <TFT_eSPI.h>
 
 RTC_SAMD51 rtc;
+TFT_eSPI tft = TFT_eSPI(); // Initialize TFT screen
 
 void setup()
 {
@@ -9,10 +11,8 @@ void setup()
 
     Serial.begin(115200);
 
-    while (!Serial)
-    {
-        ;
-    }
+    tft.init(); // Initialize TFT screen
+    tft.setRotation(1); // Set screen rotation if needed
 
     DateTime now = DateTime(F(__DATE__), F(__TIME__));
     Serial.println("adjust time!");
@@ -20,47 +20,27 @@ void setup()
 
     now = rtc.now();
 
-    Serial.print(now.year(), DEC);
-    Serial.print('/');
-    Serial.print(now.month(), DEC);
-    Serial.print('/');
-    Serial.print(now.day(), DEC);
-    Serial.print(" ");
-    Serial.print(now.hour(), DEC);
-    Serial.print(':');
-    Serial.print(now.minute(), DEC);
-    Serial.print(':');
-    Serial.print(now.second(), DEC);
-    Serial.println();
+    // Clear screen
+    tft.fillScreen(TFT_BLACK);
 
-    DateTime alarm = DateTime(now.year(), now.month(), now.day(), now.hour(), now.minute(), now.second() + 15);
-
-    rtc.setAlarm(0,alarm); // match after 15 seconds
-    rtc.enableAlarm(0, rtc.MATCH_HHMMSS); // match Every Day
-
-    rtc.attachInterrupt(alarmMatch); // callback whlie alarm is match
-
+    // Print date and time on TFT screen
+    tft.setTextColor(TFT_WHITE);
+    tft.setTextSize(2);
+    tft.setCursor(0, 0);
+    tft.print(now.year(), DEC);
+    tft.print('/');
+    tft.print(now.month(), DEC);
+    tft.print('/');
+    tft.print(now.day(), DEC);
+    tft.print(" ");
+    tft.print(now.hour(), DEC);
+    tft.print(':');
+    tft.print(now.minute(), DEC);
+    tft.print(':');
+    tft.print(now.second(), DEC);
 }
 
 void loop()
 {
-}
-
-void alarmMatch(uint32_t flag)
-{
-
-    Serial.println("Alarm Match!");
-    DateTime now = rtc.now();
-    Serial.print(now.year(), DEC);
-    Serial.print('/');
-    Serial.print(now.month(), DEC);
-    Serial.print('/');
-    Serial.print(now.day(), DEC);
-    Serial.print(" ");
-    Serial.print(now.hour(), DEC);
-    Serial.print(':');
-    Serial.print(now.minute(), DEC);
-    Serial.print(':');
-    Serial.print(now.second(), DEC);
-    Serial.println();
+    // Your loop code here, if any
 }
