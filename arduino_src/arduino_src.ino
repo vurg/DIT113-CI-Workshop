@@ -1,6 +1,7 @@
 #include "RTC_SAMD51.h"
 #include "DateTime.h"
 #include <TFT_eSPI.h>
+#include "Secrets.h"
 
 RTC_SAMD51 rtc;
 TFT_eSPI tft = TFT_eSPI(); // Initialize TFT screen
@@ -26,7 +27,7 @@ void setup()
     // Print date and time on TFT screen
     tft.setTextColor(TFT_WHITE);
     tft.setTextSize(2);
-    tft.setCursor(0, 0);
+    tft.setCursor(10, 0);
     tft.print(now.year(), DEC);
     tft.print('/');
     tft.print(now.month(), DEC);
@@ -38,6 +39,12 @@ void setup()
     tft.print(now.minute(), DEC);
     tft.print(':');
     tft.print(now.second(), DEC);
+
+    // Print super secret logo
+    tft.setTextFont(1);
+    tft.setCursor(0, 100);
+    tft.print(Secrets.logo);
+
 }
 
 void loop()
