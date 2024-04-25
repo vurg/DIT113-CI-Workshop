@@ -3,6 +3,9 @@
 .AppleDouble
 .LSOverride
 
+# Secrets such as passwords, API keye
+arduino_src/Secrets.h
+
 # Wifi network info
 arduino_src/networkInfo.h
 
