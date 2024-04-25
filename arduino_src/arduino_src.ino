@@ -40,10 +40,10 @@ void setup()
     tft.print(':');
     tft.print(now.second(), DEC);
 
-    // Print super secret logo
+    // Print super secret message from author
     tft.setTextFont(1);
     tft.setCursor(10, 100);
-    tft.print(MY_LOGO);
+    tft.print(MY_MESSAGE);
 
 }
 
