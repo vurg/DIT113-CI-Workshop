@@ -42,7 +42,7 @@ void setup()
 
     // Print super secret logo
     tft.setTextFont(1);
-    tft.setCursor(0, 100);
+    tft.setCursor(10, 100);
     tft.print(MY_LOGO);
 
 }
