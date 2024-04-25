@@ -33,7 +33,7 @@ void setup()
     tft.print('/');
     tft.print(now.day(), DEC);
     tft.print(" ");
-    tft.print(now.hour(), DEC);
+    tft.print(now.hour()+2, DEC);
     tft.print(':');
     tft.print(now.minute(), DEC);
     tft.print(':');
