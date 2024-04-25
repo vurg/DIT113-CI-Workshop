@@ -1,0 +1,17 @@
+# macOS specific files to ignore
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Wifi network info
+arduino_src/networkInfo.h
+
+# MQTT broker and topics info
+arduino_src/brokerInfo.h
+
+#Idea
+.idea/
+
+#VS code
+arduino_src/.vscode/
+
