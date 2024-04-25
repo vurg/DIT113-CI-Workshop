@@ -17,17 +17,15 @@ The objective of this workshop is to practice CI and CD, and to demonstrate its 
 2. The system shall display a message from the author who triggered the software release. #4
 
 ## Continuous Integration (CI)
-
 1. Local build process with arduino-cli: issues and limitations
 
-2. Fix a CI pipeline - what is .gitlab-ci.yml?
+2. Fix a broken CI pipeline - what is .gitlab-ci.yml?
 
 3. Implement new features and make commits - triggering the CI automated build process
 
 4. Use environment variables which are injected at runtime into the CI/CD environment
 
 ## Continuous Deployment (CD)
-
 1. Deploy software to a physical device from CI/CD pipeline
 
 2. Deploy software variants without the need to change your source code
@@ -39,3 +37,9 @@ Nasit Vurgun (Nas)
 TODO:
 - add build artifacts to CI/CD pipeline
 - use docker for local runner
+
+TODO: 
+- 3 branches:
+  - Source code (main)
+  - Broken pipeline, missing RTC library, need to fetch dependencies so arduino-cli can build project
+  - Working pipeline, want to use environment variables in CI/CD pipeline
