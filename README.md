@@ -132,7 +132,7 @@ https://git.chalmers.se/nasit/dit113-ci-workshop/-/blob/main/setup-build-env.sh?
 
 ### Fix a broken CI pipeline - triggering the CI automated build process
 ```bash
-git checkout 
+git checkout 9-fix-broken-CI-pipeline
 ```
 Requirement 1 has been implemented by your colleague, but there is a problem. The pipeline is failing! He asks you to take a look and to fix it.
 
@@ -148,7 +148,7 @@ Requirement 1 has been implemented by your colleague, but there is a problem. Th
 
 ### Use environment variables which are injected at runtime into the CI/CD environment
 ```bash
-git checkout 
+git checkout 10-custom-deployment-message
 ```
 Requirement 2 has been added to the product backlog. The customer wants you to add a custom message to the UI whenever a new release takes place.
 
@@ -166,7 +166,7 @@ Requirement 2 has been added to the product backlog. The customer wants you to a
 ## Continuous Deployment (CD)
 ### Deploy software to a physical device from CI/CD pipeline
 ```bash
-git checkout 
+git checkout 10-custom-deployment-message
 ```
 Your software is working. What about the hardware? The customer wants to see a demo of your project.
 
@@ -180,9 +180,9 @@ Your software is working. What about the hardware? The customer wants to see a d
 
 ### Deploy software variants without the need to change your source code
 ```bash
-git checkout 
+git checkout main
 ```
-The customer calls and wants you to change the MQTT broker URI and password. It is urgent. You don't have time to change the source code.
+The customer calls and wants you to change the MQTT broker API_key, URI and password. It is urgent. You don't have time to change the source code.
 
 **Questions:**
 1. How would you approach this?
@@ -195,9 +195,3 @@ Nasit Vurgun (Nas)
 TODO:
 - add build artifacts to CI/CD pipeline
 - use docker for local runner
-
-TODO: 
-- 3 branches:
-  - Source code (main)
-  - Broken pipeline, missing RTC library, need to fetch dependencies so arduino-cli can build project
-  - Working pipeline, want to use environment variables in CI/CD pipeline
