@@ -28,4 +28,6 @@ cd -
 #apt-get install git -y
 #cd `arduino-cli config dump | grep sketchbook | sed 's/.*\ //'`/libraries
 #git clone https://github.com/ThingPulse/esp8266-oled-ssd1306.git
+#git clone https://github.com/Seeed-Studio/Seeed_Arduino_RTC.git
+
 #cd -
