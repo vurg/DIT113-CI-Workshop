@@ -188,10 +188,15 @@ The customer calls and wants you to change the MQTT broker API_key, URI and pass
 1. How would you approach this?
 2. Why is this useful?
 
-## Authors and acknowledgment
-Nasit Vurgun (Nas)
+## Author
+[Nasit Vurgun (Nas)](@nasit)
 
 ## Project status
-TODO:
+ [![Latest Release](https://git.chalmers.se/nasit/dit113-ci-workshop/-/badges/release.svg)](https://git.chalmers.se/nasit/dit113-ci-workshop/-/releases) 
+ [![coverage report](https://git.chalmers.se/nasit/dit113-ci-workshop/badges/main/coverage.svg)](https://git.chalmers.se/nasit/dit113-ci-workshop/-/commits/main) 
+  [![pipeline status](https://git.chalmers.se/nasit/dit113-ci-workshop/badges/main/pipeline.svg)](https://git.chalmers.se/nasit/dit113-ci-workshop/-/commits/main) 
+
+
+**Future work:**
 - add build artifacts to CI/CD pipeline
 - use docker for local runner
